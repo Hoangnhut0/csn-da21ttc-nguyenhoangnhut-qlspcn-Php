@@ -10,7 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     <style>
         .card{
-            height: 590px;
+            height: 570px;
             overflow: auto;
          }
     </style>
@@ -26,7 +26,7 @@
         <h2 style="text-align: center;"> Danh Sách Sản Phẩm</h2> 
             <div class="card">
                 <div class="card-body" >
-                    <table class="table" style="text-align: center;">
+                     <table class="table" style="text-align: center;">
                         <thead class="thead-dark">
                             <tr>
                                 <th>ID</th>
@@ -68,7 +68,6 @@
                 </div>
             </div>
             <a class="btn btn-success" href="index.php?page_layout=them">Thêm Sản Phẩm</a>
-            <a href="index.php?page_layout=home" class="text-white btn btn-sm btn-dark ">Home</a>
         </div>
     </div>
 </div>

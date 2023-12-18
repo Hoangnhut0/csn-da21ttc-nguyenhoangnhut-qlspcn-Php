@@ -1,4 +1,31 @@
-<?php require_once 'header_section.php'; ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+</head>
+<style>
+h3{
+    color: red;
+  }
+
+.row{
+    margin-top: 10%;
+} 
+img{
+    border: 2px solid;
+    border-radius: 10px;
+}
+</style>
+<body>
+    
+
 <?php
     $id = $_GET['id'];
     $sql="SELECT * FROM products where id_sp = $id";
@@ -25,6 +52,5 @@
         </div>
     </div>
 </div>
-<?php
-     require_once 'footer_section.php';
-?>
+</body>
+</html>

@@ -37,7 +37,7 @@
         VALUES ('$prd_name', '$image', '$gia_sp', '$mau', '$manhinh','$CPU','$dungluong','$dohoa', '$id_nsx', '$id_danhmuc')";
         $query = mysqli_query($connect, $sql);
         move_uploaded_file($image_tmp,'img/'.$image);
-        header('location: index.php?page_layout=danhsach' );
+        header('location: index.php?page_layout=quantri' );
     }
     ?>
 

@@ -26,7 +26,7 @@
         VALUES ('$br_name', '$logo','$danhmuc')";
         $query = mysqli_query($connect, $sql);
         move_uploaded_file($logo_tmp,'img/'.$logo);
-        header('location: index.php?page_layout=danhsachTH' );
+        header('location: index.php?page_layout=quantri' );
     }
 ?>
 <body>

@@ -11,7 +11,7 @@
 </head>
 <style>
     .card{
-            height: 590px;
+            height: 570px;
             overflow: auto;
          }
 </style>
@@ -44,15 +44,12 @@
                                     <tr>
                                         <td><?php echo $i++; ?></td>
                                         <td><?php echo $row['ten_nsx']; ?></td>
-
                                         <td>
                                             <img style ="width: 100px;" src="img/<?php echo $row['logo']; ?>">
                                         </td>   
-
-                            
                                         <td>
                                             <a href="index.php?page_layout=suaTH&id=<?php echo $row['id_nsx']; ?>" class="btn btn-info">Sửa</a> 
-                                            <a onclick="return Del('<?php echo $row['ten_nsx']; ?>')" href="index.php?page_layout=xoaTH&id=<?php echo $row['id_nsx']; ?>;" class="btn btn-danger">Xóa</a>
+                                            <a onclick="return Delth('<?php echo $row['ten_nsx']; ?>')" href="index.php?page_layout=xoaTH&id=<?php echo $row['id_nsx']; ?>;" class="btn btn-danger">Xóa</a>
                                         </td>
                                     </tr> 
                             <?php  }?>
@@ -62,15 +59,12 @@
             </div>
             <a class="btn btn-success" href="index.php?page_layout=themTH">Thêm thương hiệu</a>
             <script>
-                function Del(name){
+                function Delth(name){
                     return confirm("Bạn có chắc muốn xóa thương hiệu: " + name + "?");
                 }
             </script> 
         </div>
     </div>
 </div>
-    <script>
-        
-    </script>  
 </body>
 </html>

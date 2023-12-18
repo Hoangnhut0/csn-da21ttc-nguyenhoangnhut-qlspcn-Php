@@ -45,7 +45,7 @@
         }
         
         $query = mysqli_query($connect, $sql);
-        header('location: index.php?page_layout=danhsachTH' );   
+        header('location: index.php?page_layout=quantri' );   
         }
 ?>
 <body>
