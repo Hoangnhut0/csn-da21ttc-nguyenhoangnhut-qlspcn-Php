@@ -11,6 +11,12 @@
             case 'danhsach':
                 require_once 'admin/danhsach.php';
                 break;
+            case 'logout':
+                require_once 'logout.php';
+                break;
+            case 'createAccount':
+                require_once 'createAccount.php';
+                break;
 
             case 'them':
                 require_once 'admin/them.php';

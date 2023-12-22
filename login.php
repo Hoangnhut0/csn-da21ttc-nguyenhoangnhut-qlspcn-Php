@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Logint</title>
+    <title>Log-in</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
@@ -14,10 +14,11 @@
 </head>
 <?php
     session_start();
+    if(isset($_SESSION['user']))
+    header('location: index.php?page_layout=quantri');
     $error_message='';
     if($_POST){
         include('config/connect.php');
-
         $username = $_POST['username'];
         $password = $_POST['password'];
         
@@ -30,18 +31,17 @@
             $user = $stmt->fetchAll()[0];
             $_SESSION['user'] = $user;
             header('location: index.php?page_layout=quantri');
-        }else $error_message='Tài khoản hoặc mật khẩu không hợp lệ !';
-        
+        }else $error_message='Tài khoản hoặc mật khẩu không hợp lệ !';        
     }
 ?>
 <?php
         if(!empty($error_message)){ ?>
-            <h4 ><strong>ERROR:</strong> <?= $error_message ?> </h4>
+            <h4 style="color: red; text-align: center; "><strong>ERROR:</strong> <?= $error_message ?> </h4>
 <?php } ?>
 
 <body> 
 
-<div class="container ">  
+<div class="container">  
     <div class="row justify-content-center">
         <div class="col-md-6">
         

@@ -57,7 +57,6 @@
                     </table>   
                 </div>
             </div>
-            <a class="btn btn-success" href="index.php?page_layout=themTH">Thêm thương hiệu</a>
             <script>
                 function Delth(name){
                     return confirm("Bạn có chắc muốn xóa thương hiệu: " + name + "?");

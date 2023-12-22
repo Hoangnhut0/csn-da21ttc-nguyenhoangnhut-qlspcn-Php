@@ -67,7 +67,6 @@
                     </table>   
                 </div>
             </div>
-            <a class="btn btn-success" href="index.php?page_layout=them">Thêm Sản Phẩm</a>
         </div>
     </div>
 </div>
