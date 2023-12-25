@@ -14,6 +14,7 @@
             case 'logout':
                 require_once 'logout.php';
                 break;
+                
             case 'createAccount':
                 require_once 'createAccount.php';
                 break;
@@ -73,6 +74,7 @@
             case 'LaptopTH':
                 require_once 'user/LaptopTH.php';    
                 break;
+
             case 'DienThoaiTH':
                 require_once 'user/DienThoaiTH.php';    
                 break;        
