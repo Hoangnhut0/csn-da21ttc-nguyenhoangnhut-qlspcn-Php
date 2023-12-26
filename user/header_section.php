@@ -21,6 +21,7 @@
 <?php
     $sql_danhmuc = "SELECT * FROM danhmuc";
     $query_danhmuc = mysqli_query($connect, $sql_danhmuc);
+    
     $sql = "SELECT * FROM products inner join brands on products.id_nsx = brands.id_nsx ";
     $query = mysqli_query($connect,$sql);
 ?>

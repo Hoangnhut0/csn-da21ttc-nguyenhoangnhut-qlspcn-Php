@@ -109,7 +109,7 @@
 
     <!-- Charts Section (you can use a library like Chart.js) -->
     <div class="mt-4">
-        <h2>Charts</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.126136853455!2d106.34394437480566!3d9.923451590178084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a0175ea296facb%3A0x55ded92e29068221!2zVHLGsOG7nW5nIMSQ4bqhaSBI4buNYyBUcsOgIFZpbmg!5e0!3m2!1svi!2s!4v1703570312042!5m2!1svi!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         <!-- Add your charts here -->
     </div>
         </main>
