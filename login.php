@@ -20,7 +20,7 @@
     if($_POST){
         include('config/connect.php');
         $username = $_POST['username'];
-        $password = $_POST['password'];
+        $password = md5($_POST['password']);
         
         $query = 'SELECT * FROM user WHERE user.email="'. $username .'"AND user.password="'. $password.'"';
         $stmt = $connect->prepare($query);
@@ -30,7 +30,7 @@
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
             $user = $stmt->fetchAll()[0];
             $_SESSION['user'] = $user;
-            header('location: index.php?page_layout=quantri');
+            header('location:index.php?page_layout=quantri');
         }else $error_message='Tài khoản hoặc mật khẩu không hợp lệ !';        
     }
 ?>
