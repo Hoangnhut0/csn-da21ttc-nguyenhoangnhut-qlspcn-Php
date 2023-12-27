@@ -17,7 +17,7 @@
     $row_up = mysqli_fetch_assoc($query_up);
        
     if(isset($_POST['sua'])){
-        $danhmuc = $_POST['ten_nsx'];
+        $danhmuc = $_POST['ten_danhmuc'];
 
             
 
