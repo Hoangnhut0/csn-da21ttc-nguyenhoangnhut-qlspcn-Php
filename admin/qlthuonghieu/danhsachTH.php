@@ -23,7 +23,7 @@
     $query_brand = mysqli_query($connect,$sql_brand);
 ?>
 <body>
-<?php require_once 'dashboard.php'; ?>
+<?php require_once './admin/dashboard.php'; ?>
 <div class="container mt-5 float-right">
     <div class="form-group">
         <div class="container-fluid">

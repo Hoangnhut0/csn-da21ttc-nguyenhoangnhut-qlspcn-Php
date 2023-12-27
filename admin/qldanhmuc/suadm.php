@@ -31,7 +31,7 @@
     } 
 ?>
 <body>
-<?php require_once 'dashboard.php'; ?>
+<?php require_once '../dashboard.php'; ?>
     
 <div class="container float-right mt-5">
     <div class="card">

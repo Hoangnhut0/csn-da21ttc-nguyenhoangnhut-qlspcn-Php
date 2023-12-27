@@ -46,7 +46,7 @@
                 <a style="color: #f8f9fa;" class="btn mb-4" href="index.php?page_layout=danhsachTH"><i class='bx bx-street-view'></i>    Danh sách thương hiệu</a>
             </li>
             <li>
-                <a style="color: #f8f9fa;" class="btn mb-4" href="index.php?page_layout=danhsachdm"><i class='bx bx-street-view'></i>    Danh sách danh mục</a>
+                <a style="color: #f8f9fa;" class="btn mb-4" href="index.php?page_layout=danhsachdm"><i class='bx bx-spreadsheet'></i>    Danh sách danh mục</a>
             </li>
             <li>
                 
@@ -55,11 +55,14 @@
             <li>
                 <a style="color: #f8f9fa;" class="btn mb-4" href="index.php?page_layout=themTH"><i class='bx bx-message-square-add'></i>    Thêm thương hiệu</a>
             </li>
+            <li>
+                <a style="color: #f8f9fa;" class="btn mb-4" href="index.php?page_layout=themdm"><i class='bx bx-message-square-add'></i>    Thêm danh mục</a>
+            </li>
             <li>  
                 <a style="color: #f8f9fa;" class="btn mb-4" href="index.php?page_layout=home"> <i class='bx bxs-home' ></i>    Trang chủ</a>
             </li>
             <li>
-                <a href="index.php?page_layout=logout" class="btn" style="color: #f8f9fa;"><i class='bx bx-power-off' ></i>    Log-out</a>
+                <a href="index.php?page_layout=logout" class="btn" style="color: #f8f9fa;"><i class='bx bx-power-off' ></i>    Đăng Xuất</a>
             </li>
 
         </ul>

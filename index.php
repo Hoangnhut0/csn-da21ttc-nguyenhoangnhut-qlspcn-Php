@@ -20,43 +20,43 @@
                 break;    
         
             case 'danhsach':
-                require_once 'admin/danhsach.php';
+                require_once 'admin/qlsanpham/danhsach.php';
                 break;
             case 'them':
-                require_once 'admin/them.php';
+                require_once 'admin/qlsanpham/them.php';
                 break;
             case 'sua':
-                require_once 'admin/sua.php';
+                require_once 'admin/qlsanpham/sua.php';
                 break;
             case 'xoa':
-                require_once 'admin/xoa.php';    
+                require_once 'admin/qlsanpham/xoa.php';    
                 break;
 
             case 'danhsachTH':
-                require_once 'admin/danhsachTH.php';
+                require_once 'admin/qlthuonghieu/danhsachTH.php';
                 break;
             case 'themTH':
-                require_once 'admin/themTH.php';
+                require_once 'admin/qlthuonghieu/themTH.php';
                 break;
             case 'xoaTH':
-                require_once 'admin/xoaTH.php';    
+                require_once 'admin/qlthuonghieu/xoaTH.php';    
                 break;
             case 'suaTH':
-                require_once 'admin/suaTH.php';    
+                require_once 'admin/qlthuonghieu/suaTH.php';    
                 break;
 
             case 'danhsachdm':
-                require_once 'admin/danhsachdm.php';
+                require_once 'admin/qldanhmuc/danhsachdm.php';
                 break;
-                case 'themdm':
-                    require_once 'admin/themdm.php';    
-                    break;
-                    case 'xoadm':
-                        require_once 'admin/xoadm.php';    
-                        break;
-                        case 'suadm':
-                            require_once 'admin/suadm.php';    
-                            break;
+            case 'themdm':
+                require_once 'admin/qldanhmuc/themdm.php';    
+                break;
+            case 'xoadm':
+                require_once 'admin/qldanhmuc/xoadm.php';    
+                break;
+            case 'suadm':
+                require_once 'admin/qldanhmuc/suadm.php';    
+                break;
 
                 
             case 'home':
