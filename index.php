@@ -4,6 +4,7 @@
 
     if(isset($_GET['page_layout'])){
         switch($_GET['page_layout']){
+            // account
             case 'login':
                 require_once 'login.php';
                 break;
@@ -18,7 +19,8 @@
             case 'quantri':
                 require_once 'admin/quantri.php';
                 break;    
-        
+
+            //quan ly san pham
             case 'danhsach':
                 require_once 'admin/qlsanpham/danhsach.php';
                 break;
@@ -32,6 +34,7 @@
                 require_once 'admin/qlsanpham/xoa.php';    
                 break;
 
+            //quan ly thuong hieu
             case 'danhsachTH':
                 require_once 'admin/qlthuonghieu/danhsachTH.php';
                 break;
@@ -44,7 +47,8 @@
             case 'suaTH':
                 require_once 'admin/qlthuonghieu/suaTH.php';    
                 break;
-
+            
+            //quan ly danh muc
             case 'danhsachdm':
                 require_once 'admin/qldanhmuc/danhsachdm.php';
                 break;
@@ -58,7 +62,7 @@
                 require_once 'admin/qldanhmuc/suadm.php';    
                 break;
 
-                
+            //user    
             case 'home':
                 require_once 'user/trangchu.php';
                 break;
@@ -80,6 +84,10 @@
             case 'chitiet':
                 require_once 'user/chitiet.php';    
                 break;
+
+                case 'quanly':
+                    require_once 'admin/quanly.php';    
+                    break;
             
             
         }

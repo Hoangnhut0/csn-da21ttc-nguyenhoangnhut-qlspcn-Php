@@ -26,49 +26,71 @@
       padding: 20px;
     }
 </style>
-<body>
-    
-
+<body>    
 <?php require_once 'dashboard.php' ?>
-<div class="container-fluid mt-4">
-    <div class="row">
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1 class="h2">Dashboard</h1>
-            </div>
-    <!-- Statistics Section -->
-    <div class="row">
-        <div class="col-md-4">
-            <div class="card">
+<div class="container-fluid ">
+    <div class="row ">
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">   
+        <div class="row">
+        <div class="col-md-4 mb-3">
+            <div class="card" style="background: #99ff99;">
                 <div class="card-body">
-                    <h5 class="card-title">Total Users</h5>
-                    <p class="card-text">500</p>
+                    <?php
+                        $sql_all = "SELECT COUNT(*) as product_all FROM products";
+                        $result1 = $connect->query($sql_all);
+                        if($row1 = $result1->fetch_assoc()){?>
+                            <h5 class="card-title">Tất cả</h5>
+                            <p class="card-text"><?php echo $row1['product_all'];?> Sản Phẩm</p>
+                        <?php }?>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Revenue</h5>
-                    <p class="card-text">$50,000</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Page Views</h5>
-                    <p class="card-text">100,000</p>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <!-- Charts Section (you can use a library like Chart.js) -->
-    <div class="mt-4">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.126136853455!2d106.34394437480566!3d9.923451590178084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a0175ea296facb%3A0x55ded92e29068221!2zVHLGsOG7nW5nIMSQ4bqhaSBI4buNYyBUcsOgIFZpbmg!5e0!3m2!1svi!2s!4v1703570312042!5m2!1svi!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <!-- Add your charts here -->
+
+        <?php
+            $sql = "SELECT products. id_danhmuc, danhmuc. ten_danhmuc, COUNT(*) as product_count FROM products 
+            JOIN danhmuc ON products.id_danhmuc = danhmuc.id_danhmuc
+            GROUP BY products.id_danhmuc";
+            $result = $connect->query($sql);
+            if($result){
+                while ($row = $result->fetch_assoc()) {?>
+                    <div class="col-md-4 ">
+                        <div class="card" style="background:  #9999ff;" >
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo $row['ten_danhmuc']; ?></h5>
+                                <p class="card-text"><?php echo $row['product_count'];?> Sản Phẩm</p>
+                            </div>
+                        </div>
+                    </div>
+        <?php } }?>
+
+    <div class="container" style="text-align: center;">
+        <?php
+            $sql_th = "SELECT products. id_nsx, brands. ten_nsx, COUNT(*) as product_th FROM products 
+            JOIN brands ON products. id_nsx = brands. id_nsx
+            GROUP BY products.id_nsx";
+            $result2 = $connect->query($sql_th);
+        ?>
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th>Thương Hiệu</th>
+                    <th>Số lượng sản phẩm</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                    if($result2){
+                        while ($row2 = $result2->fetch_assoc()) {?>
+                            <tr>
+                                <td><?php echo $row2['ten_nsx']; ?></td>
+                                <td><?php echo $row2['product_th'];?></td>
+                            </tr>
+                <?php }} ?>
+            </tbody>
+        </table>
     </div>
+    
         </main>
     </div>
 </div>

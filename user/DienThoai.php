@@ -33,8 +33,7 @@
     <div class=" btn-icon">
         <?php
          while($row = mysqli_fetch_assoc($query_brand)){
-            if($row['id_danhmuc'] == 1){
-            ?>
+            if($row['id_danhmuc'] == 1){?>
                 <a href="index.php?page_layout=DienThoaiTH&id_nsx=<?php echo $row['id_nsx']; ?>">
                     <img class="img-logo" src="img/<?php echo $row['logo']; ?>">
                 </a>                                            

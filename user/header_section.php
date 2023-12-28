@@ -54,9 +54,7 @@
             </li>
         </ul>
     </div>   
-    <div>          
-        <button onclick="window.location.href='index.php?page_layout=login'"  class="text-white-50 btn btn-sm btn-dark " >Đăng nhập</button> 
-    </div>      
+         
     <form class="form-inline" >
         <div class="input-group" >
             <input type="text" class="form-control" placeholder="Search" >
