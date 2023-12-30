@@ -10,17 +10,17 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Dashboard</title>
 
-    <style>
-        #sidebar {
-      height: 100vh;
-      width: 250px;
-      position: fixed;
-      top: 0;
-      left: 0;
-      background-color: #343a40;
-      padding-top: 56px;
+<style>
+    #sidebar {
+        height: 100vh;
+        width: 250px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #343a40;
+        padding-top: 56px;
     }
-    </style>
+</style>
 </head>
 <?php
     session_start();
@@ -39,7 +39,6 @@
         </div>
         <ul class="list-unstyled components">
             <li>
-                
                 <a style="color: #f8f9fa;" class="btn mb-4 " href="index.php?page_layout=danhsach"><i class='bx bxl-product-hunt'></i>   Danh sách sản phẩm</a>
             </li>
             <li>
@@ -48,8 +47,7 @@
             <li>
                 <a style="color: #f8f9fa;" class="btn mb-4" href="index.php?page_layout=danhsachdm"><i class='bx bx-spreadsheet'></i>    Danh sách danh mục</a>
             </li>
-            <li>
-                
+            <li>   
                 <a style="color: #f8f9fa;" class="btn mb-4" href="index.php?page_layout=them"><i class='bx bx-message-square-add'></i>   Thêm sản phẩm</a>
             </li> 
             <li>
@@ -59,7 +57,7 @@
                 <a style="color: #f8f9fa;" class="btn mb-4" href="index.php?page_layout=themdm"><i class='bx bx-message-square-add'></i>    Thêm danh mục</a>
             </li>
             <li>  
-                <a style="color: #f8f9fa;" class="btn mb-4" href="index.php?page_layout=home"> <i class='bx bxs-home' ></i>    Trang chủ</a>
+                <a style="color: #f8f9fa;" class="btn mb-4" href="../index.php"> <i class='bx bxs-home' ></i>    Trang chủ</a>
             </li>
             <li>
                 <a href="index.php?page_layout=logout" class="btn" style="color: #f8f9fa;"><i class='bx bx-power-off' ></i>    Đăng Xuất</a>

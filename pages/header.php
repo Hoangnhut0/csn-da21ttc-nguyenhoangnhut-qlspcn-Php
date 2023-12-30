@@ -1,6 +1,7 @@
 <?php
     require_once './config/db.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,6 +22,9 @@
 <?php
     $sql_danhmuc = "SELECT * FROM danhmuc";
     $query_danhmuc = mysqli_query($connect, $sql_danhmuc);
+
+    $sql_thuonghieu = "SELECT * FROM brands";
+    $query_thuonghieu = mysqli_query($connect, $sql_thuonghieu);
     
     $sql = "SELECT * FROM products inner join brands on products.id_nsx = brands.id_nsx ";
     $query = mysqli_query($connect,$sql);
@@ -38,13 +42,19 @@
                 <div id="id_danhmuc" class="dropdown-menu" >
                     <?php
                         while($row_danhmuc = mysqli_fetch_assoc($query_danhmuc)){
-                            $url ="index.php?page_layout=DienThoai";
-                            if($row_danhmuc['ten_danhmuc'] === "Laptop")
-                            {
-                                $url='index.php?page_layout=Laptop';
-                            }
                     ?>
-                        <a class="dropdown-item" href="<?php echo $url ?>"><?php echo $row_danhmuc['ten_danhmuc']?></a>
+                        <a class="dropdown-item" href="?quanly=danhmuc&id=<?php echo $row_danhmuc['id_danhmuc']?>"><?php echo $row_danhmuc['ten_danhmuc']?></a>
+                <?php }?>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button type="button" class="btn btn-dark text-white-50 dropdown-toggle" data-toggle="dropdown">Thương hiệu</button>
+                <div id="id_danhmuc" class="dropdown-menu" >
+                    <?php
+                        while($row_thuonghieu = mysqli_fetch_assoc($query_thuonghieu)){
+                    ?>
+                        <a style="text-align: center;" class="dropdown-item" href="?quanly=thuonghieu&id=<?php echo $row_thuonghieu['id_nsx']?>"><img src="img/<?php echo $row_thuonghieu['logo']?>" alt=""></a>
                 <?php }?>
                 </div>
             </div>

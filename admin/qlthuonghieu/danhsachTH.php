@@ -23,7 +23,7 @@
     $query_brand = mysqli_query($connect,$sql_brand);
 ?>
 <body>
-<?php require_once './admin/dashboard.php'; ?>
+<?php require_once 'dashboard.php'; ?>
 <div class="container mt-5 float-right">
     <div class="form-group">
         <div class="container-fluid">
@@ -47,7 +47,7 @@
                                         <td><?php echo $i++; ?></td>
                                         <td><?php echo $row['ten_nsx']; ?></td>
                                         <td>
-                                            <img style ="width: 100px;" src="img/<?php echo $row['logo']; ?>">
+                                            <img style ="width: 100px;" src="../img/<?php echo $row['logo']; ?>">
                                         </td>   
                                         <td>
                                             <a href="index.php?page_layout=suaTH&id=<?php echo $row['id_nsx']; ?>" class="btn btn-info">Sửa</a> 

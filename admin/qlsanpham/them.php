@@ -42,12 +42,12 @@
         VALUES ('$prd_name', '$image', '$gia_sp', '$mau', '$manhinh','$CPU','$dungluong','$dohoa', '$id_nsx', '$id_danhmuc')";
         $query = mysqli_query($connect, $sql);
         move_uploaded_file($image_tmp,'img/'.$image);
-        header('location: index.php?page_layout=them' );
+        header('location: index.php?page_layout=danhsach' );
     }
     ?>
 
 <body>
-<?php require_once './admin/dashboard.php'; ?>
+<?php require_once 'dashboard.php'; ?>
     <div class="container float-right">
         <div class="card">
             <div class="card-header">

@@ -1,6 +1,3 @@
-<?php
-     require_once 'header_section.php';
-?>
 <style>
     .danhsachsanpham {
     height: 480px;
@@ -24,8 +21,8 @@
                             <img class="card-img-top  " src="img/<?php echo $row['image']; ?>" alt="Product 1">
                             <div class="card-body">
                                 <h5 class="card-title"><strong><?php echo $row['ten_sp']; ?></strong></h5>
-                                <p style="color: red;"><?php echo $row['gia_sp']; ?> VND</p>
-                                <a href="index.php?page_layout=chitiet&id=<?php echo $row['id_sp']; ?>" class="btn btn-info">Xem chi tiết</a>
+                                <p style="color: red;"><?php echo number_format($row['gia_sp']),0,'',''.' vnđ' ;?> VND</p>
+                                <a href="?quanly=chitiet&id=<?php echo $row['id_sp']; ?>" class="btn btn-info">Xem chi tiết</a>
                             </div>
                         </div>
                     </div>
@@ -44,17 +41,11 @@
                             <img class="card-img-top  " src="img/<?php echo $row['image']; ?>" alt="Product 1">
                             <div class="card-body">
                                 <h5 class="card-title"><strong><?php echo $row['ten_sp']; ?></strong></h5>
-                                <p style="color: red;"><?php echo $row['gia_sp']; ?> VND</p>
-                                <a href="index.php?page_layout=chitiet&id=<?php echo $row['id_sp']; ?>" class="btn btn-info">Xem chi tiết</a>
+                                <p style="color: red;"><?php echo number_format($row['gia_sp']),0,'',''.' vnđ' ;?> VND</p>
+                                <a href="?quanly=chitiet&id=<?php echo $row['id_sp']; ?>" class="btn btn-info">Xem chi tiết</a>
                             </div>
                         </div>
                     </div>
                 <?php }}?>
     </div>
 </div>
-
-
-<?php
-require_once 'footer_section.php';
-?>
-

@@ -9,6 +9,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+
 </head>
 
 <style>
@@ -65,12 +67,6 @@
         <?php } }?>
 
     <div class="container" style="text-align: center;">
-        <?php
-            $sql_th = "SELECT products. id_nsx, brands. ten_nsx, COUNT(*) as product_th FROM products 
-            JOIN brands ON products. id_nsx = brands. id_nsx
-            GROUP BY products.id_nsx";
-            $result2 = $connect->query($sql_th);
-        ?>
         <table class="table">
             <thead class="thead-light">
                 <tr>
@@ -79,6 +75,12 @@
                 </tr>
             </thead>
             <tbody>
+            <?php
+                $sql_th = "SELECT products. id_nsx, brands. ten_nsx, COUNT(*) as product_th FROM products 
+                JOIN brands ON products. id_nsx = brands. id_nsx
+                GROUP BY products.id_nsx";
+                $result2 = $connect->query($sql_th);
+            ?>
                 <?php
                     if($result2){
                         while ($row2 = $result2->fetch_assoc()) {?>
@@ -93,6 +95,8 @@
     
         </main>
     </div>
+
+    
 </div>
 </body>
 </html>

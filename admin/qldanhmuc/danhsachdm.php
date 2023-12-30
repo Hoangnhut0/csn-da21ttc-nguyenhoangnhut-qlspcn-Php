@@ -6,7 +6,7 @@
     <title>Danh Mục</title>
 </head>
 <body>
-    <?php include('./admin/dashboard.php'); ?>
+    <?php require_once 'dashboard.php' ?>
     <?php
     $sql_danhmuc = "SELECT * FROM danhmuc";         
     $query_danhmuc = mysqli_query($connect,$sql_danhmuc);

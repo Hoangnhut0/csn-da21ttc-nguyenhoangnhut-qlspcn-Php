@@ -23,7 +23,7 @@
     $query = mysqli_query($connect,$sql);      
 ?>  
 <body>
-<?php require_once './admin/dashboard.php';?>
+<?php require_once 'dashboard.php';?>
 <div class="container mt-5 float-right">
     <div class="form-group">
         <div class="container-fluid">
@@ -53,7 +53,7 @@
                                         <td><?php echo $row['ten_sp']; ?></td>
 
                                         <td>
-                                            <img style ="width: 100px;" src="img/<?php echo $row['image']; ?>">
+                                            <img style ="width: 100px;" src="../img/<?php echo $row['image']; ?>">
                                         </td>   
 
                                         <td><?php echo $row['mau']; ?></td>

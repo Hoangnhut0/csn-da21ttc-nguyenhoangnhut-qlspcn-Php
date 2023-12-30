@@ -18,7 +18,7 @@
     header('location: index.php?page_layout=quantri');
     $error_message='';
     if($_POST){
-        include('config/connect.php');
+        require_once '../config/connect.php';
         $username = $_POST['username'];
         $password = md5($_POST['password']);
         

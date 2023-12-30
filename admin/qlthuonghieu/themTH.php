@@ -32,7 +32,7 @@
     }
 ?>
 <body>
-<?php require_once './admin/dashboard.php'; ?>
+<?php require_once 'dashboard.php'; ?>
 <div class="container float-right">
     <div class="card">
         <div class="card-header">
