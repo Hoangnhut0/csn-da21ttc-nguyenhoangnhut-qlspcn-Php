@@ -57,7 +57,7 @@
                                         </td>   
 
                                         <td><?php echo $row['mau']; ?></td>
-                                        <td style="color:red"><?php echo $row['gia_sp']; ?>Đ</td>
+                                        <td style="color:red"><?php echo number_format($row['gia_sp']),0,'',''.' vnđ' ;?></td>
                                         <td><?php echo $row['manhinh'];?><br><?php echo $row['CPU']?><br><?php echo $row['dungluong']?><br><?php echo $row['dohoa'];?></td>
                                         <td><?php echo $row['ten_nsx']; ?></td>
                             

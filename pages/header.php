@@ -12,12 +12,9 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-   <link rel="stylesheet" href="css/home.css">
+   <link rel="stylesheet" type="text/css" href="css/home.css">
 </head>
 
-<style>
-    
-</style>
 
 <?php
     $sql_danhmuc = "SELECT * FROM danhmuc";
@@ -41,10 +38,9 @@
                 <button type="button" class="btn btn-dark text-white-50 dropdown-toggle" data-toggle="dropdown">Danh mục</button>
                 <div id="id_danhmuc" class="dropdown-menu" >
                     <?php
-                        while($row_danhmuc = mysqli_fetch_assoc($query_danhmuc)){
-                    ?>
+                        while($row_danhmuc = mysqli_fetch_assoc($query_danhmuc)){ ?>
                         <a class="dropdown-item" href="?quanly=danhmuc&id=<?php echo $row_danhmuc['id_danhmuc']?>"><?php echo $row_danhmuc['ten_danhmuc']?></a>
-                <?php }?>
+                    <?php }?>
                 </div>
             </div>
 
@@ -54,7 +50,7 @@
                     <?php
                         while($row_thuonghieu = mysqli_fetch_assoc($query_thuonghieu)){
                     ?>
-                        <a style="text-align: center;" class="dropdown-item" href="?quanly=thuonghieu&id=<?php echo $row_thuonghieu['id_nsx']?>"><img src="img/<?php echo $row_thuonghieu['logo']?>" alt=""></a>
+                        <a style="text-align: center;" class="dropdown-item" href="?quanly=thuonghieu&id=<?php echo $row_thuonghieu['id_nsx']?>"><img class="imglogo" src="img/<?php echo $row_thuonghieu['logo']?>" alt=""></a>
                 <?php }?>
                 </div>
             </div>
@@ -65,9 +61,9 @@
         </ul>
     </div>   
          
-    <form class="form-inline" >
+    <form class="form-inline" action="?quanly=timkiem" method="POST">
         <div class="input-group" >
-            <input type="text" class="form-control" placeholder="Search" >
+            <input type="text" class="form-control" placeholder="Search" name="tukhoa"><button type="submit" name="timkiem">Tìm</button>
         </div>
     </form>
 </nav>

@@ -43,3 +43,6 @@ html{
     z-index: 1000;
     width: 100%;
 }
+img.imglogo {
+    width: 80px;
+}

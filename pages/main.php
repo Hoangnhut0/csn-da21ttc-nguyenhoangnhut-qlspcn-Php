@@ -12,6 +12,8 @@
         require_once 'main/thuonghieu.php';
     }elseif($tam == 'chitiet'){
         require_once 'main/chitiet.php';
+    }elseif($tam == 'timkiem'){
+        require_once 'main/timkiem.php';
     }else{
         require_once 'main/index.php';
     }
