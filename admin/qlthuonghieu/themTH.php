@@ -12,22 +12,22 @@
 </head>
 
 <?php
-    $sql_brand = "SELECT * FROM brands";
+    $sql_brand = "SELECT * FROM thuonghieu";
     $sql_danhmuc = "SELECT * FROM danhmuc";
     
     $query_danhmuc = mysqli_query($connect, $sql_danhmuc);
 
     if(isset($_POST['y'])){
-        $br_name = $_POST['ten_nsx'];
+        $br_name = $_POST['ten_thuonghieu'];
 
         $logo = $_FILES['logo']['name'];
         $logo_tmp = $_FILES['logo']['tmp_name'];
         $danhmuc = $_POST['id_danhmuc'];
 
-        $sql = "INSERT INTO brands (ten_nsx, logo, id_danhmuc)
+        $sql = "INSERT INTO thuonghieu (ten_thuonghieu, logo, id_danhmuc)
         VALUES ('$br_name', '$logo','$danhmuc')";
         $query = mysqli_query($connect, $sql);
-        move_uploaded_file($logo_tmp,'img/'.$logo);
+        move_uploaded_file($logo_tmp,'../img/logo/'.$logo);
         header('location: index.php?page_layout=danhsachTH' );
     }
 ?>
@@ -42,7 +42,7 @@
                 <form method="POST" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="">Tên thương hiệu</label>
-                        <input type="text" name="ten_nsx" class="form-control"require>
+                        <input type="text" name="ten_thuonghieu" class="form-control"require>
                     </div>
 
                     <div class="form-group">
@@ -58,11 +58,12 @@
                                     <option value="<?php echo $row_danhmuc['id_danhmuc']?>"><?php echo $row_danhmuc['ten_danhmuc']?></option>
                             <?php }?>
                         </select>
+                    </div>
                     <button name="y" class="btn btn-success" type="submit">Thêm</button>
                 </form>
             </div>
         </div>
     </div>
-</div>
+
 </body>
 </html>

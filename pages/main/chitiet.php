@@ -18,7 +18,7 @@ h3{
 
 <?php
     $id = $_GET['id'];
-    $sql="SELECT * FROM products where id_sp = $id";
+    $sql="SELECT * FROM sanpham where id_sp = $id";
     $query = mysqli_query($connect,$sql);
     $row = mysqli_fetch_assoc($query);
 ?>

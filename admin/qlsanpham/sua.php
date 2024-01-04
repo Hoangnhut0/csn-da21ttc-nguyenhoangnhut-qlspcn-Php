@@ -16,11 +16,11 @@
 
     $id = $_GET['id'];
     
-    $sql_up = "SELECT * FROM products where id_sp = $id";
+    $sql_up = "SELECT * FROM sanpham where id_sp = $id";
     $query_up = mysqli_query($connect, $sql_up);
     $row_up = mysqli_fetch_assoc($query_up);
     $nsx = $dm = "";
-    $nsx = $row_up["id_nsx"];
+    $nsx = $row_up["id_thuonghieu"];
     $dm = $row_up["id_danhmuc"];    
     if(isset($_POST['ok'])){
         $prd_name = $_POST['ten_sp'];
@@ -39,20 +39,20 @@
         $CPU = $_POST['CPU'];
         $dungluong = $_POST['dungluong'];
         $dohoa = $_POST['dohoa'];
-        $id_nsx = $_POST['id_nsx'];
+        $id_nsx = $_POST['id_thuonghieu'];
         $id_danhmuc = $_POST['id_danhmuc'];
 
         //cập nhật thông tin của sản phẩm có id_sp = $id
         if(!isset($image))
         {
-            $sql = "UPDATE products 
-        SET ten_sp = '$prd_name', gia_sp = '$gia_sp', mau = '$mau', manhinh = '$manhinh',CPU = '$CPU',dungluong = '$dungluong',dohoa = '$dohoa', id_nsx = '$id_nsx', id_danhmuc = '$id_danhmuc'
+            $sql = "UPDATE sanpham 
+        SET ten_sp = '$prd_name', gia_sp = '$gia_sp', mau = '$mau', manhinh = '$manhinh',CPU = '$CPU',dungluong = '$dungluong',dohoa = '$dohoa', id_thuonghieu = '$id_nsx', id_danhmuc = '$id_danhmuc'
         Where id_sp = '$id'";
         }
         else
         {
-            $sql = "UPDATE products 
-        SET ten_sp = '$prd_name', image = '$image', gia_sp = '$gia_sp', mau = '$mau', manhinh = '$manhinh',CPU = '$CPU',dungluong = '$dungluong',dohoa = '$dohoa', id_nsx = '$id_nsx', id_danhmuc = '$id_danhmuc'
+            $sql = "UPDATE sanpham 
+        SET ten_sp = '$prd_name', image = '$image', gia_sp = '$gia_sp', mau = '$mau', manhinh = '$manhinh',CPU = '$CPU',dungluong = '$dungluong',dohoa = '$dohoa', id_thuonghieu = '$id_nsx', id_danhmuc = '$id_danhmuc'
         Where id_sp = '$id'";
 
         }
@@ -112,16 +112,15 @@
 
                     <div class="form-group">
                         <label for="">Nhà Sản Xuất</label>
-                        <?php echo $nsx;?>
-                        <select class="form-control" name="id_nsx">
+                        <select class="form-control" name="id_thuonghieu">
                             <?php
-                                $sql_brand = "SELECT * FROM brands";
+                                $sql_brand = "SELECT * FROM thuonghieu";
                                 $query_brand = mysqli_query($connect,$sql_brand);
                                 while($row_brand = mysqli_fetch_assoc($query_brand)){
-                                    if($nsx==$row_brand['id_nsx'])
-                                        echo "<option selected value='".$row_brand['id_nsx']."'>".$row_brand['ten_nsx']."</option>";
+                                    if($nsx==$row_brand['id_thuonghieu'])
+                                        echo "<option selected value='".$row_brand['id_thuonghieu']."'>".$row_brand['ten_thuonghieu']."</option>";
                                     else
-                                    echo "<option value='".$row_brand['id_nsx']."'>".$row_brand['ten_nsx']."</option>";
+                                    echo "<option value='".$row_brand['id_thuonghieu']."'>".$row_brand['ten_thuonghieu']."</option>";
                                }
                                ?>
                         </select>
@@ -129,7 +128,6 @@
 
                     <div class="form-group">
                         <label for="">Loại sản phẩm</label>
-                        <?php echo $dm;?>
                         <select class="form-control" name=  "id_danhmuc">
                             <?php
                                 $sql_danhmuc = "SELECT *FROM danhmuc";

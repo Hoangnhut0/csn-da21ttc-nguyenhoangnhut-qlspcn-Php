@@ -9,16 +9,16 @@
 </style>
 <?php
     
-    $sql_pro = "SELECT * FROM products WHERE products.id_danhmuc='$_GET[id]' ORDER BY id_sp DESC";         
+    $sql_pro = "SELECT * FROM sanpham WHERE sanpham.id_danhmuc='$_GET[id]' ORDER BY id_sp DESC";         
     $query_pro = mysqli_query($connect,$sql_pro);
     
     $sql_danhmuc = "SELECT * FROM danhmuc WHERE danhmuc.id_danhmuc='$_GET[id]' LIMIT 1";
     $query_danhmuc = mysqli_query($connect,$sql_danhmuc);
     $row_title = mysqli_fetch_array($query_danhmuc);
 
-    $sql_brands = "SELECT * FROM brands WHERE brands.id_danhmuc='$_GET[id]' order by id_nsx desc";
-    $query_brands = mysqli_query($connect,$sql_brands);
-    $row_brands = mysqli_fetch_array($query_brands);
+    $sql_thuonghieu = "SELECT * FROM thuonghieu WHERE thuonghieu.id_danhmuc='$_GET[id]' order by thuonghieu.id_thuonghieu DESC";
+    $query_thuonghieu = mysqli_query($connect,$sql_thuonghieu);
+    $row_thuonghieu = mysqli_fetch_assoc($query_thuonghieu);
     
 ?>
 
@@ -27,8 +27,8 @@
     <div class="btni">
         <div class=" btn-icon" style="text-align: center;">
             <?php
-                while($row_brands = mysqli_fetch_array($query_brands)){  ?>
-                    <a href="?quanly=thuonghieu&id=<?php echo $row_brands['id_nsx']?>" class=""><img class="img-logo" src="img/<?php echo $row_brands['logo']?>" alt=""></a>
+                while($row_thuonghieu = mysqli_fetch_assoc($query_thuonghieu)){  ?>
+                    <a href="?quanly=thuonghieu&id=<?php echo $row_thuonghieu['id_thuonghieu']?>" class=""><img class="img-logo" src="./img/logo/<?php echo $row_thuonghieu['logo']?>" alt=""></a>
                 <?php }?>
         </div>
     </div>

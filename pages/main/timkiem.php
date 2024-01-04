@@ -2,7 +2,7 @@
 if (isset($_POST['timkiem'])) {
     $tukhoa = $_POST['tukhoa'];
 
-    $sql_pro = "SELECT * FROM products, danhmuc WHERE products.id_danhmuc=danhmuc.id_danhmuc AND products.ten_sp LIKE '%" . $tukhoa . "%' ";
+    $sql_pro = "SELECT * FROM sanpham, danhmuc WHERE sanpham.id_danhmuc=danhmuc.id_danhmuc AND sanpham.ten_sp LIKE '%" . $tukhoa . "%' ";
     $query_pro = mysqli_query($connect, $sql_pro);
 
     if (mysqli_num_rows($query_pro) > 0) {?>

@@ -18,12 +18,13 @@
  
     </style>
 </head>
+<?php require_once 'dashboard.php';?>
 <?php
-    $sql = "SELECT * FROM products inner join brands on products.id_nsx = brands.id_nsx ";         
-    $query = mysqli_query($connect,$sql);      
+    $sql_sanpham = "SELECT * FROM sanpham inner join thuonghieu on sanpham.id_thuonghieu = thuonghieu.id_thuonghieu ";         
+    $query_sanpham = mysqli_query($connect,$sql_sanpham);      
 ?>  
 <body>
-<?php require_once 'dashboard.php';?>
+
 <div class="container mt-5 float-right">
     <div class="form-group">
         <div class="container-fluid">
@@ -39,7 +40,7 @@
                                 <th>Màu</th>
                                 <th>Giá</th>
                                 <th>Thông Số Kỹ Thuật</th>
-                                <th>Nhà SX</th>
+                                <th>Thương hiệu</th>
                                 <th>Thao Tác</th>
                                 
                             </tr>
@@ -47,7 +48,7 @@
                         <tbody>
                             <?php
                             $i = 1;
-                                while($row = mysqli_fetch_assoc($query)){ ?>
+                                while($row = mysqli_fetch_assoc($query_sanpham)){ ?>
                                     <tr>
                                         <td><?php echo $i++; ?></td>
                                         <td><?php echo $row['ten_sp']; ?></td>
@@ -59,7 +60,7 @@
                                         <td><?php echo $row['mau']; ?></td>
                                         <td style="color:red"><?php echo number_format($row['gia_sp']),0,'',''.' vnđ' ;?></td>
                                         <td><?php echo $row['manhinh'];?><br><?php echo $row['CPU']?><br><?php echo $row['dungluong']?><br><?php echo $row['dohoa'];?></td>
-                                        <td><?php echo $row['ten_nsx']; ?></td>
+                                        <td><?php echo $row['ten_thuonghieu']; ?></td>
                             
                                         <td>
                                             <a href="index.php?page_layout=sua&id=<?php echo $row['id_sp']; ?>" class="btn btn-info">Sửa</a> 

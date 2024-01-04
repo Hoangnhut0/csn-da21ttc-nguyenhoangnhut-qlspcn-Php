@@ -1,4 +1,4 @@
 <?php
- $connect = mysqli_connect('localhost','root','','data_qlsp');
+ $connect = mysqli_connect('localhost','root','','db_qlsp');
  ?>
 

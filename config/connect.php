@@ -3,7 +3,7 @@
     $username = 'root';
     $password = '';
     try{
-        $connect = new PDO("mysql:host=$servername; dbname=data_qlsp", $username, $password); 
+        $connect = new PDO("mysql:host=$servername; dbname=db_qlsp", $username, $password); 
         $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         //echo 'conn yes!';
     }catch(\Exception $e){

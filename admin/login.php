@@ -14,7 +14,7 @@
 </head>
 <?php
     session_start();
-    if(isset($_SESSION['user']))
+    if(isset($_SESSION['admin']))
     header('location: index.php?page_layout=quantri');
     $error_message='';
     if($_POST){
@@ -22,14 +22,14 @@
         $username = $_POST['username'];
         $password = md5($_POST['password']);
         
-        $query = 'SELECT * FROM user WHERE user.email="'. $username .'"AND user.password="'. $password.'"';
+        $query = 'SELECT * FROM admin WHERE admin.ten_dn="'. $username .'"AND admin.password="'. $password.'"';
         $stmt = $connect->prepare($query);
         $stmt->execute();
 
         if($stmt->rowCount()>0){
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
             $user = $stmt->fetchAll()[0];
-            $_SESSION['user'] = $user;
+            $_SESSION['admin'] = $user;
             header('location:index.php?page_layout=quantri');
         }else $error_message='Tài khoản hoặc mật khẩu không hợp lệ !';        
     }

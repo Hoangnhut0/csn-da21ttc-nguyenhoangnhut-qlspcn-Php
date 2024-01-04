@@ -20,11 +20,10 @@
     $sql_danhmuc = "SELECT * FROM danhmuc";
     $query_danhmuc = mysqli_query($connect, $sql_danhmuc);
 
-    $sql_thuonghieu = "SELECT * FROM brands";
+    $sql_thuonghieu = "SELECT * FROM thuonghieu";
     $query_thuonghieu = mysqli_query($connect, $sql_thuonghieu);
     
-    $sql = "SELECT * FROM products inner join brands on products.id_nsx = brands.id_nsx ";
-    $query = mysqli_query($connect,$sql);
+    
 ?>
 
 <body>
@@ -50,7 +49,7 @@
                     <?php
                         while($row_thuonghieu = mysqli_fetch_assoc($query_thuonghieu)){
                     ?>
-                        <a style="text-align: center;" class="dropdown-item" href="?quanly=thuonghieu&id=<?php echo $row_thuonghieu['id_nsx']?>"><img class="imglogo" src="img/<?php echo $row_thuonghieu['logo']?>" alt=""></a>
+                        <a style="text-align: center;" class="dropdown-item" href="?quanly=thuonghieu&id=<?php echo $row_thuonghieu['id_thuonghieu']?>"><img class="imglogo" src="img/logo/<?php echo $row_thuonghieu['logo']?>" alt=""></a>
                 <?php }?>
                 </div>
             </div>
@@ -63,7 +62,7 @@
          
     <form class="form-inline" action="?quanly=timkiem" method="POST">
         <div class="input-group" >
-            <input type="text" class="form-control" placeholder="Search" name="tukhoa"><button type="submit" name="timkiem">Tìm</button>
+            <input type="text" class="form-control" placeholder="Search" name="tukhoa"><button class="btn" type="submit" name="timkiem">Tìm</button>
         </div>
     </form>
 </nav>
@@ -76,13 +75,13 @@
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img class="d-block " src="img/banner iphone 15.jpeg" alt="First slide">
+            <img class="d-block " src="img/iPhone-14-Pro-Max-Everything-We-Know-Till-Now.jpg" alt="First slide">
         </div>
         <div class="carousel-item">
-            <img class="d-block" src="img/asus-gaming-banner-thinkpro.jpg" alt="Second slide">
+            <img class="d-block" src="img/1920_x_659_1614062618.jpg" alt="Second slide">
         </div>
         <div class="carousel-item">
-            <img class="d-block" src="img/quangcao-samsung.jpg" alt="">
+            <img class="d-block" src="img/banner-quang-cao-dien-thoai_103211774.jpg" alt="">
         </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

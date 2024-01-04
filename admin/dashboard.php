@@ -24,9 +24,9 @@
 </head>
 <?php
     session_start();
-    if(!isset($_SESSION['user'])) 
+    if(!isset($_SESSION['admin'])) 
     header('location: index.php?page_layout=login');
-    $user = $_SESSION['user']
+    $user = $_SESSION['admin']
 ?> 
 <body>
 <nav id="sidebar">

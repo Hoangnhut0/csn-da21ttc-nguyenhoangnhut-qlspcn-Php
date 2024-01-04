@@ -19,9 +19,9 @@ if(isset($_GET['page_layout'])){
                 require_once 'quantri.php';
                 break;
 
-                case 'quanly':
-                    require_once 'quanly.php';    
-                    break;
+            case 'quanly':
+                require_once 'quanly.php';    
+                break;
                                 //quan ly san pham
             case 'danhsach':
                 require_once 'qlsanpham/danhsach.php';

@@ -19,7 +19,7 @@
 </style>
 
 <?php
-    $sql_brand = "SELECT * FROM brands";         
+    $sql_brand = "SELECT * FROM thuonghieu";         
     $query_brand = mysqli_query($connect,$sql_brand);
 ?>
 <body>
@@ -45,13 +45,13 @@
                                 while($row = mysqli_fetch_assoc($query_brand)){ ?>
                                     <tr>
                                         <td><?php echo $i++; ?></td>
-                                        <td><?php echo $row['ten_nsx']; ?></td>
+                                        <td><?php echo $row['ten_thuonghieu']; ?></td>
                                         <td>
-                                            <img style ="width: 100px;" src="../img/<?php echo $row['logo']; ?>">
+                                            <img style ="width: 100px;" src="../img/logo/<?php echo $row['logo']; ?>">
                                         </td>   
                                         <td>
-                                            <a href="index.php?page_layout=suaTH&id=<?php echo $row['id_nsx']; ?>" class="btn btn-info">Sửa</a> 
-                                            <a onclick="return Delth('<?php echo $row['ten_nsx']; ?>')" href="index.php?page_layout=xoaTH&id=<?php echo $row['id_nsx']; ?>;" class="btn btn-danger">Xóa</a>
+                                            <a href="index.php?page_layout=suaTH&id=<?php echo $row['id_thuonghieu']; ?>" class="btn btn-info">Sửa</a> 
+                                            <a onclick="return Delth('<?php echo $row['ten_thuonghieu']; ?>')" href="index.php?page_layout=xoaTH&id=<?php echo $row['id_thuonghieu']; ?>;" class="btn btn-danger">Xóa</a>
                                         </td>
                                     </tr> 
                             <?php  }?>

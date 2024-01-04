@@ -16,34 +16,36 @@
 
     $id = $_GET['id'];
     
-    $sql_up = "SELECT * FROM brands where id_nsx = $id";
+    $sql_up = "SELECT * FROM thuonghieu where id_thuonghieu = $id";
     $query_up = mysqli_query($connect, $sql_up);
     $row_up = mysqli_fetch_assoc($query_up);
+    
        
     if(isset($_POST['sua'])){
-        $br_name = $_POST['ten_nsx'];
+        $br_name = $_POST['ten_thuonghieu'];
+        $danhmuc = $_POST['id_danhmuc'];
 
         if($_FILES['logo']['name']==''){
             $logo = $row_up['logo'];
         }else{
             $logo = $_FILES['logo']['name'];
             $logo_tmp = $_FILES['logo']['tmp_name'];
-            move_uploaded_file($logo_tmp,'img/' .$logo);
+            move_uploaded_file($logo_tmp,'img/logo/' .$logo);
         }
             
 
         //cập nhật thông tin của sản phẩm có id_nsx = $id
         if(!isset($logo))
         {
-            $sql = "UPDATE brands
-        SET ten_nsx = '$br_name'
-        Where id_nsx = '$id'";
+            $sql = "UPDATE thuonghieu
+        SET ten_thuonghieu = '$br_name', id_danhmuc = '$danhmuc'
+        Where id_thuonghieu = '$id'";
         }
         else
         {
-            $sql = "UPDATE brands 
-        SET ten_nsx = '$br_name', logo = '$logo'
-        Where id_nsx = '$id'";
+            $sql = "UPDATE thuonghieu 
+        SET ten_thuonghieu = '$br_name', logo = '$logo', id_danhmuc = '$danhmuc'
+        Where id_thuonghieu = '$id'";
 
         }
         
@@ -57,18 +59,36 @@
 <div class="container float-right mt-5">
     <div class="card">
         <div class="card-header">
-            <h2>Thêm Thương Hiệu</h2>
+            <h2>Sửa Thương Hiệu</h2>
         </div>
             <div class="card-body">
                 <form method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                         <label for="">Tên thương hiệu</label>
-                        <input type="text" name="ten_nsx" class="form-control"require value="<?php echo $row_up['ten_nsx']; ?>">
+                        <input type="text" name="ten_thuonghieu" class="form-control"require value="<?php echo $row_up['ten_thuonghieu']; ?>">
                     </div>
 
                     <div class="form-group">
                         <label for="">Ảnh</label><br>
                         <input type="file" name="logo">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Loại sản phẩm</label>
+                        <select class="form-control" name=  "id_danhmuc">
+                            <?php
+                                $sql_danhmuc = "SELECT *FROM danhmuc";
+                                $query_danhmuc = mysqli_query($connect, $sql_danhmuc);
+                               
+                                foreach($query_danhmuc as $row_danhmuc){
+                                    if($dm==$row_danhmuc['id_danhmuc'])
+                                        echo "<option selected value='".$row_danhmuc['id_danhmuc']."'>".$row_danhmuc['ten_danhmuc']."</option>";
+                                    else
+                                        echo "<option value='".$row_danhmuc['id_danhmuc']."'>".$row_danhmuc['ten_danhmuc']."</option>";
+                                        
+                                }
+                                ?>
+                        </select>
                     </div>
                     <button name="sua" class="btn btn-success" type="submit">Sửa</button>
                 </form>

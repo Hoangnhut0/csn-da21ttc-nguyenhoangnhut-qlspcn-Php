@@ -38,7 +38,7 @@
             <div class="card" style="background: #99ff99;">
                 <div class="card-body">
                     <?php
-                        $sql_all = "SELECT COUNT(*) as product_all FROM products";
+                        $sql_all = "SELECT COUNT(*) as product_all FROM sanpham";
                         $result1 = $connect->query($sql_all);
                         if($row1 = $result1->fetch_assoc()){?>
                             <h5 class="card-title">Tất cả</h5>
@@ -50,9 +50,9 @@
 
 
         <?php
-            $sql = "SELECT products. id_danhmuc, danhmuc. ten_danhmuc, COUNT(*) as product_count FROM products 
-            JOIN danhmuc ON products.id_danhmuc = danhmuc.id_danhmuc
-            GROUP BY products.id_danhmuc";
+            $sql = "SELECT sanpham.id_danhmuc, danhmuc.ten_danhmuc, COUNT(*) as product_count FROM sanpham 
+            JOIN danhmuc ON sanpham.id_danhmuc = danhmuc.id_danhmuc
+            GROUP BY sanpham.id_danhmuc";
             $result = $connect->query($sql);
             if($result){
                 while ($row = $result->fetch_assoc()) {?>
@@ -76,16 +76,16 @@
             </thead>
             <tbody>
             <?php
-                $sql_th = "SELECT products. id_nsx, brands. ten_nsx, COUNT(*) as product_th FROM products 
-                JOIN brands ON products. id_nsx = brands. id_nsx
-                GROUP BY products.id_nsx";
+                $sql_th = "SELECT sanpham.id_thuonghieu, thuonghieu.ten_thuonghieu, COUNT(*) as product_th FROM sanpham 
+                JOIN thuonghieu ON sanpham.id_thuonghieu = thuonghieu.id_thuonghieu
+                GROUP BY sanpham.id_thuonghieu";
                 $result2 = $connect->query($sql_th);
             ?>
                 <?php
                     if($result2){
                         while ($row2 = $result2->fetch_assoc()) {?>
                             <tr>
-                                <td><?php echo $row2['ten_nsx']; ?></td>
+                                <td><?php echo $row2['ten_thuonghieu']; ?></td>
                                 <td><?php echo $row2['product_th'];?></td>
                             </tr>
                 <?php }} ?>

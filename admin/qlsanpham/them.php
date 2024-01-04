@@ -14,11 +14,11 @@
 </head>
 
 <?php
-    $sql_brand = "SELECT * FROM brands";         
+    $sql_brand = "SELECT * FROM thuonghieu";         
     $query_brand = mysqli_query($connect,$sql_brand);
 ?>
 <?php
-    $sql_brand = "SELECT * FROM brands";
+    $sql_brand = "SELECT * FROM thuonghieu";
     $sql_danhmuc = "SELECT * FROM danhmuc";
         
     $query_brand = mysqli_query($connect,$sql_brand);
@@ -36,13 +36,14 @@
         $CPU = $_POST['CPU'];
         $dungluong = $_POST['dungluong'];
         $dohoa = $_POST['dohoa'];
-        $id_nsx = $_POST['id_nsx'];
+        $id_thuonghieu = $_POST['id_thuonghieu'];
         $id_danhmuc = $_POST['id_danhmuc'];
-        $sql = "INSERT INTO products (ten_sp, image, gia_sp, mau, manhinh, CPU, dungluong, dohoa, id_nsx, id_danhmuc)
-        VALUES ('$prd_name', '$image', '$gia_sp', '$mau', '$manhinh','$CPU','$dungluong','$dohoa', '$id_nsx', '$id_danhmuc')";
+        $sql = "INSERT INTO sanpham (ten_sp, image, gia_sp, mau, manhinh, CPU, dungluong, dohoa, id_thuonghieu, id_danhmuc)
+        VALUES ('$prd_name', '$image', '$gia_sp', '$mau', '$manhinh','$CPU','$dungluong','$dohoa', '$id_thuonghieu', '$id_danhmuc')";
         $query = mysqli_query($connect, $sql);
-        move_uploaded_file($image_tmp,'img/'.$image);
+        move_uploaded_file($image_tmp,'../img/'.$image);
         header('location: index.php?page_layout=danhsach' );
+        
     }
     ?>
 
@@ -64,7 +65,7 @@
                         <label for="">Ảnh</label><br>
                         <input type="file" name="image" >
                     </div>
-
+                    
                     <div class="form-group">
                         <label for="">Giá</label>
                         <input type="number" name="gia_sp" class="form-control"require >
@@ -97,10 +98,10 @@
 
                     <div class="form-group">
                         <label for="">Nhà Sản Xuất</label>
-                        <select class="form-control" name="id_nsx">
+                        <select class="form-control" name="id_thuonghieu">
                             <?php
                                 while($row_brand = mysqli_fetch_assoc($query_brand)){?>
-                                    <option value="<?php echo $row_brand['id_nsx']?>"><?php echo $row_brand['ten_nsx']?></option>
+                                    <option value="<?php echo $row_brand['id_thuonghieu']?>"><?php echo $row_brand['ten_thuonghieu']?></option>
                             <?php }?>
                         </select>
                     </div>
