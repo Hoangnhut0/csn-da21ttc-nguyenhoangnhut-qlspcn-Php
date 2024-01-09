@@ -66,7 +66,7 @@
                     </div>
         <?php } }?>
 
-    <div class="container" style="text-align: center;">
+    <!-- <div class="container" style="text-align: center;">
         <table class="table">
             <thead class="thead-light">
                 <tr>
@@ -75,12 +75,7 @@
                 </tr>
             </thead>
             <tbody>
-            <?php
-                $sql_th = "SELECT sanpham.id_thuonghieu, thuonghieu.ten_thuonghieu, COUNT(*) as product_th FROM sanpham 
-                JOIN thuonghieu ON sanpham.id_thuonghieu = thuonghieu.id_thuonghieu
-                GROUP BY sanpham.id_thuonghieu";
-                $result2 = $connect->query($sql_th);
-            ?>
+            
                 <?php
                     if($result2){
                         while ($row2 = $result2->fetch_assoc()) {?>
@@ -91,7 +86,57 @@
                 <?php }} ?>
             </tbody>
         </table>
+    </div> -->
+    <?php
+        $sql_th = "SELECT sanpham.id_thuonghieu, thuonghieu.ten_thuonghieu, COUNT(*) as product_th FROM sanpham 
+        JOIN thuonghieu ON sanpham.id_thuonghieu = thuonghieu.id_thuonghieu
+        GROUP BY sanpham.id_thuonghieu";
+        $result2 = $connect->query($sql_th);
+    ?>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+
+    <div class="container" style="text-align: center;">
+        <canvas id="myChart" width="450" height="210"></canvas>
     </div>
+
+    <script>
+    var ctx = document.getElementById("myChart").getContext("2d");
+    var myChart = new Chart(ctx, {
+        type: "line",
+        data: {
+        labels: [
+            0,
+            <?php
+            foreach ($result2 as $row) {
+            echo '"' . $row['ten_thuonghieu'] . '",';
+            }
+            ?>
+        ],
+        datasets: [{
+            data: [
+            0,
+            <?php
+            foreach ($result2 as $row) {
+                echo $row['product_th'] . ',';
+            }
+            ?>
+            ],
+            fill: true,
+            borderColor: "#ff9933",
+            borderWidth: 3
+        }]
+        },
+        options: {
+        title: {
+            text: "Số lượng sản phẩm theo thương hiệu"
+        },
+        legend: {
+            display: true
+        },
+        
+        }
+    });
+    </script>
     
         </main>
     </div>
