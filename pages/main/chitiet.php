@@ -1,19 +1,5 @@
 
-<style>
-h3{
-    color: red;
-  }
 
-.row{
-    margin-top: 10%;
-} 
-.anhchitiet{
-    border: 2px solid;
-    border-radius: 10px;
-    width: auto;
-}
-</style>
-<body>
     
 
 <?php
@@ -27,18 +13,25 @@ h3{
     $query_danhmuc = mysqli_query($connect, $sql_danhmuc);
 ?>
 
-<div class="container ">
-    <div class="row">
-        <div class="col-md-6 anhchitiet">
-            <img   src="img/<?php echo $row['image']?>" class="img-fluid" >
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="img-container">
+                <img src="img/<?php echo $row['image']?>" class="img-fluid rounded shadow-sm">
+            </div>
         </div>
         <div class="col-md-6">
-            <h1 class="display-4" ><strong><?php echo $row['ten_sp'];?></strong></h1><br>
-            <h3 class="lead"><b>Giá: </b><?php echo $row['gia_sp'];?> VND</h3><br><br>
-            <p><?php echo $row['manhinh'];?></p>
-            <p><?php echo $row['CPU'];?></p>
-            <p><?php echo $row['dungluong']?></p>
-            <p><?php echo $row['dohoa']?></p>
+            <h1 class="display-4 text-center mb-4"><strong><?php echo $row['ten_sp'];?></strong></h1>
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="lead "><b>Giá: </b><?php echo $row['gia_sp'];?> VND</h3>
+                    <hr>
+                    <p class="mb-4"><?php echo $row['manhinh'];?></p>
+                    <p class="mb-4"><?php echo $row['CPU'];?></p>
+                    <p class="mb-4"><?php echo $row['dungluong']?></p>
+                    <p class="mb-4"><?php echo $row['dohoa']?></p>
+                </div>
+            </div>
         </div>
     </div>
 </div>

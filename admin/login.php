@@ -34,30 +34,30 @@
         }else $error_message='Tài khoản hoặc mật khẩu không hợp lệ !';        
     }
 ?>
-<?php
-        if(!empty($error_message)){ ?>
-            <h4 style="color: red; text-align: center; "><strong>ERROR:</strong> <?= $error_message ?> </h4>
-<?php } ?>
-
-<body> 
-
-<div class="container">  
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-        
-            <h3>Đăng Nhập</h3><br>
-            <div class="card">
+<body>
+<div class="container">
+    <div class="row justify-content-center align-items-center" style="height: 100vh;">
+        <div class="col-md-6 col-lg-4">
+            <div class="card border-0 shadow-lg rounded-lg bg-light">
+                <div class="card-header bg-primary text-white text-center">
+                <h3 class="m-0">Đăng Nhập</h3>
+                </div>
                 <div class="card-body">
                     <form action="login.php" method="POST">
+                        <?php if (!empty($error_message)): ?>
+                            <div class="alert alert-danger" role="alert">
+                                <strong>ERROR:</strong> <?= $error_message ?>
+                            </div>
+                        <?php endif; ?>
                         <div class="form-group">
                             <label for="username">Tên đăng nhập:</label>
                             <input id="username" type="text" class="form-control" name="username" placeholder="Enter your username">
                         </div>
                         <div class="form-group">
                             <label for="password">Mật khẩu:</label>
-                            <input  id="password" type="password" class="form-control" name="password" placeholder="Enter your password">
+                            <input id="password" type="password" class="form-control" name="password" placeholder="Enter your password">
                         </div>
-                        <button type="submit" class="btn btn-primary">Đăng nhập</button>
+                        <button type="submit" class="btn btn-primary btn-block">Đăng nhập</button>
                     </form>
                 </div>
             </div>
