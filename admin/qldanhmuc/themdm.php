@@ -8,7 +8,6 @@
 </head>
 
 <?php
-    $sql_brand = "SELECT * FROM brands";
     $sql_danhmuc = "SELECT * FROM danhmuc";
     
     $query_danhmuc = mysqli_query($connect, $sql_danhmuc);

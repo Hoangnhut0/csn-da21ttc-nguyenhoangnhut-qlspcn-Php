@@ -34,7 +34,7 @@
                                         <td><?php echo $row['ten_danhmuc']; ?></td>  
                                         <td>
                                             <a href="index.php?page_layout=suadm&id=<?php echo $row['id_danhmuc']; ?>" class="btn btn-info">Sửa</a> 
-                                            <a onclick="return Deldm('<?php echo $row['ten_danhmuc']; ?>')" href="index.php?page_layout=xoadm&id=<?php echo $row['id_danhmuc']; ?>;" class="btn btn-danger">Xóa</a>
+                                            <a onclick="return Del('<?php echo $row['ten_danhmuc']; ?>')" href="index.php?page_layout=xoadm&id=<?php echo $row['id_danhmuc']; ?>;" class="btn btn-danger">Xóa</a>
                                         </td>
                                     </tr> 
                             <?php  }?>
@@ -43,7 +43,7 @@
                 </div>
             </div>
             <script>
-                function Deldm(name){
+                function Del(name){
                     return confirm("Bạn có chắc muốn xóa danh mục: " + name + "?");
         }
             </script> 

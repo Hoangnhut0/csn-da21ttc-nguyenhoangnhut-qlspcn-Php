@@ -30,7 +30,7 @@
         }else{
             $image = $_FILES['image']['name'];
             $image_tmp = $_FILES['image']['tmp_name'];
-            move_uploaded_file($image_tmp,'img/' .$image);
+            move_uploaded_file($image_tmp,'../img/' .$image);
         }
             
         $gia_sp = $_POST['gia_sp'];

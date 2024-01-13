@@ -18,7 +18,7 @@
         top: 0;
         left: 0;
         background-color: #343a40;
-        padding-top: 56px;
+        padding-top: 25px;
     }
 </style>
 </head>

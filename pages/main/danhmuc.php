@@ -16,10 +16,9 @@
     $query_danhmuc = mysqli_query($connect,$sql_danhmuc);
     $row_title = mysqli_fetch_array($query_danhmuc);
 
-    $sql_thuonghieu = "SELECT * FROM thuonghieu WHERE thuonghieu.id_danhmuc='$_GET[id]' order by thuonghieu.id_thuonghieu DESC";
+    $sql_thuonghieu = "SELECT * FROM thuonghieu WHERE thuonghieu.id_danhmuc='$_GET[id]' order by thuonghieu.id_thuonghieu desc";
     $query_thuonghieu = mysqli_query($connect,$sql_thuonghieu);
     $row_thuonghieu = mysqli_fetch_assoc($query_thuonghieu);
-    
 ?>
 
 <!-- Product Section -->
@@ -47,7 +46,7 @@
                             </div>
                         </div>
                     </div>
-                <?php }?>
+            <?php }?>
         </div>
     </div>
     

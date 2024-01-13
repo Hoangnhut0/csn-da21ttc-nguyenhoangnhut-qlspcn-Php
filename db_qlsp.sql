@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 04, 2024 lúc 03:31 AM
+-- Thời gian đã tạo: Th1 13, 2024 lúc 07:36 AM
 -- Phiên bản máy phục vụ: 10.1.38-MariaDB
 -- Phiên bản PHP: 7.3.2
 
@@ -164,13 +164,16 @@ ALTER TABLE `danhmuc`
 -- Chỉ mục cho bảng `sanpham`
 --
 ALTER TABLE `sanpham`
-  ADD PRIMARY KEY (`id_sp`);
+  ADD PRIMARY KEY (`id_sp`),
+  ADD KEY `id_thuonghieu` (`id_thuonghieu`,`id_danhmuc`),
+  ADD KEY `id_danhmuc` (`id_danhmuc`);
 
 --
 -- Chỉ mục cho bảng `thuonghieu`
 --
 ALTER TABLE `thuonghieu`
-  ADD PRIMARY KEY (`id_thuonghieu`);
+  ADD PRIMARY KEY (`id_thuonghieu`),
+  ADD KEY `id_danhmuc` (`id_danhmuc`);
 
 --
 -- AUTO_INCREMENT cho các bảng đã đổ
@@ -186,19 +189,36 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT cho bảng `danhmuc`
 --
 ALTER TABLE `danhmuc`
-  MODIFY `id_danhmuc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_danhmuc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `sanpham`
 --
 ALTER TABLE `sanpham`
-  MODIFY `id_sp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_sp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT cho bảng `thuonghieu`
 --
 ALTER TABLE `thuonghieu`
-  MODIFY `id_thuonghieu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_thuonghieu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+--
+-- Các ràng buộc cho các bảng đã đổ
+--
+
+--
+-- Các ràng buộc cho bảng `sanpham`
+--
+ALTER TABLE `sanpham`
+  ADD CONSTRAINT `sanpham_ibfk_1` FOREIGN KEY (`id_thuonghieu`) REFERENCES `thuonghieu` (`id_thuonghieu`),
+  ADD CONSTRAINT `sanpham_ibfk_2` FOREIGN KEY (`id_danhmuc`) REFERENCES `danhmuc` (`id_danhmuc`);
+
+--
+-- Các ràng buộc cho bảng `thuonghieu`
+--
+ALTER TABLE `thuonghieu`
+  ADD CONSTRAINT `thuonghieu_ibfk_1` FOREIGN KEY (`id_danhmuc`) REFERENCES `danhmuc` (`id_danhmuc`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
